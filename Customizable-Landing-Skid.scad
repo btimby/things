@@ -16,7 +16,7 @@ spacing2        = 12;
 holesize        = 2; // [2:M2, 3:M3]
 
 // Thickness of base (increases motor screw lengths)
-thickness       = 4; // [1:1MM, 2:2MM, 3:3MM, 4:4MM]
+thickness       = 4; // [1:1MM, 2:2MM, 3:3MM, 4:4MM, 5:5MM, 6:6MM]
 
 // Rounded is heavier and stonger and cross is lighter.
 style           = 1; // [1:Rounded, 2:Cross]
