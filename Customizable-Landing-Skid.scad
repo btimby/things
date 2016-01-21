@@ -16,7 +16,7 @@ spacing2        = 12;
 holesize        = 2; // [2:M2, 3:M3]
 
 // Thickness of base (increases motor screw lengths)
-length       = 4; // [1:1MM, 2:2MM, 3:3MM, 4:4MM]
+thickness       = 4; // [1:1MM, 2:2MM, 3:3MM, 4:4MM]
 
 // Rounded is heavier and stonger and cross is lighter.
 style           = 1; // [1:Rounded, 2:Cross]
@@ -44,17 +44,17 @@ rotate([180, 0, 0]) {
         if (style==1) {
             // Style: Rounded
             // Screw head insets
-            translate([spacing1/2, 0, 0]) cylinder(r=holesize_r+1.6, h=height-length, $fn=20);
-            translate([0-spacing1/2, 0, 0]) cylinder(r=holesize_r+1.6, h=height-length, $fn=20);
-            translate([0, spacing2/2, 0]) cylinder(r=holesize_r+1.6, h=height-length, $fn=20);
-            translate([0, 0-spacing2/2, 0]) cylinder(r=holesize_r+1.6, h=height-length, $fn=20);
+            translate([spacing1/2, 0, 0]) cylinder(r=holesize_r+1.6, h=height-thickness, $fn=20);
+            translate([0-spacing1/2, 0, 0]) cylinder(r=holesize_r+1.6, h=height-thickness, $fn=20);
+            translate([0, spacing2/2, 0]) cylinder(r=holesize_r+1.6, h=height-thickness, $fn=20);
+            translate([0, 0-spacing2/2, 0]) cylinder(r=holesize_r+1.6, h=height-thickness, $fn=20);
         } else {
             // Style: Cross
             // Trianglular cutouts
-            rotate([0, 0, 45]) translate([1.5, 1.5, -3]) cube([diameter_r, diameter_r, height]);
-            rotate([0, 0, -45]) translate([1.5, 1.5, -3]) cube([diameter_r, diameter_r, height]);
-            rotate([0, 0, 135]) translate([1.5, 1.5, -3]) cube([diameter_r, diameter_r, height]);
-            rotate([0, 0, 225]) translate([1.5, 1.5, -3]) cube([diameter_r, diameter_r, height]);
+            rotate([0, 0, 45]) translate([1.5, 1.5, 0-thickness]) cube([diameter_r, diameter_r, height]);
+            rotate([0, 0, -45]) translate([1.5, 1.5, 0-thickness]) cube([diameter_r, diameter_r, height]);
+            rotate([0, 0, 135]) translate([1.5, 1.5, 0-thickness]) cube([diameter_r, diameter_r, height]);
+            rotate([0, 0, 225]) translate([1.5, 1.5, 0-thickness]) cube([diameter_r, diameter_r, height]);
         }
     }
 }
